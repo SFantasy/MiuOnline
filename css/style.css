@@ -1,0 +1,87 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
+h1 span {
+	color: #ffaa00;
+}
+
+h1 span:first-child {
+	color: #0099cc;
+}
+
+h1 span:last-child {
+	color: #00cc99;
+}
+
+header {
+	font-family: "Comic Sans MS", "sans serif";
+	padding: 0 50px 0 50px;
+	background: #f3f3f3;
+	background-image: linear-gradient(#f9f9f9, #f3f3f3);
+	background-repeat: repeat-x;
+}
+
+header h1 {
+	margin: 10px 0 10px 20px;
+	display: inline-block;
+}
+
+header small {
+	color: #777;
+	margin-left: 10px;
+}
+
+#miu {
+	display: block;
+	border-top: 1px solid #ccc;
+	padding-top: 30px;
+}
+
+#editor {
+	font-family: "Source Code Pro", Consolas;
+	font-size: 13px;
+	-webkit-font-smoothing: antialiased;
+	width: 600px;
+	margin: 0 50px 0 50px;
+	padding: 5px;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	position: fixed;
+}
+
+#preview blockquote {
+	border-left: 4px solid #DDD;
+	padding: 0 15px;
+	color: #777;
+}
+
+#preview pre {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  border-radius: 3px;
+  line-height: 18px;
+  margin-bottom: 16px;
+}
+
+.postContent pre, .postContent code {
+  font-family: "Source Code Pro", Consolas, sans-serif;
+  background-color: #f8f8f8;
+  font-size: 13px;
+  overflow: auto;
+}
+
+#preview a {
+	color: #4183c4;
+}
+
+#preview {
+	font-size: 13px;
+	font-family: Helvetica, arial, freesans, clean, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	cursor: text;
+	width: 600px;
+	margin-right: 50px;
+	float: right;
+}
