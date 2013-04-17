@@ -11,9 +11,11 @@
 			<small>Online markdown editor</small>
 		</header>
 		<div id="toolbar">
-			<button onclick="openFile()">Open file</button>
+			<input id="fileInput" type="file" onchange="openFile(this.files)" />
+			<button onclick="showFileInput()">Open file</button>
 			<button onclick="saveFile()">Save as</button>
-			<button onclick="openEditor()">New</button>
+			<button onclick="openEditor()">New Editor</button>
+			<button onclick="clearContent()">Clear content</button>
 			<button onclick="return closeEditor()">Close</button>
 		</div>
 		<div id="miu">

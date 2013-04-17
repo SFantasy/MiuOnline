@@ -46,10 +46,18 @@ button {
 	padding: 5px 8px;
 	color: #777;
 	background-color: #f3f3f3;
+	border: 1px solid #fff;
 }
 
 button:hover {
 	cursor: pointer;
+	background-color: #fff;
+	color: #777;
+	border: 1px solid #f3f3f3;
+}
+
+#fileInput {
+	display: none;
 }
 
 #miu {

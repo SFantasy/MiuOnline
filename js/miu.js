@@ -3,6 +3,7 @@
  * Reference: markdown-js (https://github.com/evilstreak/markdown-js)
  *
  */
+var $ = function (id) { return document.getElementById(id); };
 
 function Editor(input, preview)	{
     this.update = function () {
@@ -12,7 +13,6 @@ function Editor(input, preview)	{
     this.update();
 }
 
-var $ = function (id) { return document.getElementById(id); };
 new Editor($("editor"), $("preview"));
 
 
@@ -35,10 +35,37 @@ function closeEditor() {
 }
 
 /*
+ *  Open file function 
+*/
+function openFile(files) {
+	var file = files[0];
+	var reader = new FileReader();
+	reader.onload = function(e) {
+		var output = $("editor");
+		output.textContent = e.target.result;
+	};
+
+	reader.readAsText(file);
+}
+
+function showFileInput() {
+	var fileInput = $("fileInput");
+	fileInput.click();
+}
+
+/*
+ * Clear content function
+*/
+function clearContent() {
+	$("editor").value = " ";
+	$("editor").editor.update();
+}
+
+/*
  *  Save file function
  */
 function saveFile() {
-	var content = document.getElementById('editor');
+	var content = $('editor');
 	var uriContent = "data:application/octet-stream," + encodeURIComponent(conent.value);
 	window.open(uirContent, 'Save file as');
 }
