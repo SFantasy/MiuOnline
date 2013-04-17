@@ -23,6 +23,10 @@ header {
 	background-repeat: repeat-x;
 }
 
+header h1:hover, header small:hover {
+	cursor: default;
+}
+
 header h1 {
 	margin: 10px 0 10px 20px;
 	display: inline-block;
