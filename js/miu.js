@@ -38,5 +38,7 @@ function closeEditor() {
  *  Save file function
  */
 function saveFile() {
-
+	var content = document.getElementById('editor');
+	var uriContent = "data:application/octet-stream," + encodeURIComponent(conent.value);
+	window.open(uirContent, 'Save file as');
 }
