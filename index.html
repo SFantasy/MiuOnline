@@ -9,22 +9,21 @@
 			<h1><span>M</span><span>i</span><span>u</span></h1>
 			<small>Online markdown editor</small>
 		</header>
+		<div id="toolbar">
+			<button>New</button>
+			<button onclick="saveFile()">Save as</button>
+			<button onclick="return closeEditor()">Close</button>
+		</div>
 		<div id="miu">
+			<div></div>
 			<textarea id="editor" rows="30" cols="80" oninput="this.editor.update()"></textarea>
 			<div id="preview">
 			</div>
 		</div>
+		<footer>
+			<p><a href="https://github.com/SFantasy/MiuOnline">Fork me on GitHub</a></p>
+		</footer>
 	</body>
+	<script src="js/miu.js"></script>
 	<script src="js/markdown.js"></script>
-	<script>
-		function Editor(input, preview)	{
-	        this.update = function () {
-	          preview.innerHTML = markdown.toHTML(input.value);
-	        }
-	        input.editor = this;
-	        this.update();
-      	}
-		var $ = function (id) { return document.getElementById(id); };
-		new Editor($("editor"), $("preview"));
-	</script>
 </html>
