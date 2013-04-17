@@ -26,4 +26,4 @@ Site: [MiuOnline](http://shaofantasy.cn/MiuOnline)
 
 ## License
 
-Based on [MIT](http://en.widipeida.org/wiki/MIT_License).
+Based on [MIT](http://en.wikipeida.org/wiki/MIT_License).

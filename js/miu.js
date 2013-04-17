@@ -38,5 +38,4 @@ function closeEditor() {
  *  Save file function
  */
 function saveFile() {
-
 }

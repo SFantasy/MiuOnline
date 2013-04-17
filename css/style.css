@@ -102,6 +102,8 @@ button:hover {
 	width: 600px;
 	margin-right: 50px;
 	float: right;
+	overflow: hidden;
+	word-wrap: break-word;
 }
 
 footer {
