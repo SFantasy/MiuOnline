@@ -39,6 +39,19 @@ header small {
   	padding: 10px 0 0 50px;
 }
 
+button {
+	font-family: "Comic Sans MS", "sans serif";
+	border-radius: 3px;
+	border: none;
+	padding: 5px 8px;
+	color: #777;
+	background-color: #f3f3f3;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
 #miu {
 	display: block;
 	padding-top: 10px;
