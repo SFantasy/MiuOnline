@@ -15,9 +15,14 @@ function Editor(input, preview)	{
 var $ = function (id) { return document.getElementById(id); };
 new Editor($("editor"), $("preview"));
 
+
 /*
- *  Close function
+ *  Open and Close function
  */
+function openEditor() {
+	window.open("http://shaofantasy.cn/MiuOnline", "Miu Online - New File");
+}
+
 function closeEditor() {
 	if(confirm("Sure to close?") == true) {
 		window.opener = null;
@@ -30,9 +35,8 @@ function closeEditor() {
 }
 
 /*
- *  
- *  
+ *  Save file function
  */
 function saveFile() {
-	
+
 }

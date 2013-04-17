@@ -3,6 +3,7 @@
 	<head>
 		<title>Miu - Online markdown editor</title>
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/github.css" />
 	</head>
 	<body>
 		<header>
@@ -10,7 +11,7 @@
 			<small>Online markdown editor</small>
 		</header>
 		<div id="toolbar">
-			<button>New</button>
+			<button onclick="openEditor()">New</button>
 			<button onclick="saveFile()">Save as</button>
 			<button onclick="return closeEditor()">Close</button>
 		</div>
@@ -26,4 +27,5 @@
 	</body>
 	<script src="js/miu.js"></script>
 	<script src="js/markdown.js"></script>
+	<script src="js/highlight.pack.js"></script>
 </html>
