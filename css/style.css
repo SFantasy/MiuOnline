@@ -23,6 +23,10 @@ header {
 	background-repeat: repeat-x;
 }
 
+header h1:hover, header small:hover {
+	cursor: default;
+}
+
 header h1 {
 	margin: 10px 0 10px 20px;
 	display: inline-block;
@@ -46,10 +50,18 @@ button {
 	padding: 5px 8px;
 	color: #777;
 	background-color: #f3f3f3;
+	border: 1px solid #fff;
 }
 
 button:hover {
 	cursor: pointer;
+	background-color: #fff;
+	color: #777;
+	border: 1px solid #f3f3f3;
+}
+
+#fileInput {
+	display: none;
 }
 
 #miu {
@@ -61,8 +73,8 @@ button:hover {
 	font-family: "Source Code Pro", Consolas;
 	font-size: 13px;
 	-webkit-font-smoothing: antialiased;
-	width: 600px;
-	margin: 0 50px 0 50px;
+	width: 45%;
+	margin: 0 2% 0 2.5%;
 	padding: 5px;
 	border: 1px solid #cccccc;
 	border-radius: 4px;
@@ -99,8 +111,8 @@ button:hover {
 	font-family: Helvetica, arial, freesans, clean, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	cursor: text;
-	width: 600px;
-	margin-right: 50px;
+	width: 40%;
+	margin-right: 8%;
 	float: right;
 	overflow: hidden;
 	word-wrap: break-word;
