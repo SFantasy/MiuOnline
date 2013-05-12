@@ -18,11 +18,14 @@
 
 Online Markdown editor with live preview.
 
-Site: [MiuOnline](http://shaofantasy.cn/MiuOnline)
+[MiuOnline](http://shaofantasy.cn/MiuOnline)
 
-## Markdown parser support
+## Features
 
-[Markdown-js](https://github.com/evilstreak/markdown-js)
+* Markdown live preivew
+	- Markdown parser: [Markdown-js](https://github.com/evilstreak/markdown-js)
+
+* Support reading file from your local storage and saving file.
 
 ## License
 
