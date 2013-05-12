@@ -65,11 +65,11 @@ function clearContent() {
  *  Save file function
  */
 function saveFile() {
-	var fileName = prompt("Input file name: ");
+	// var fileName = prompt("Input file name: ");
 
-	if( fileName == "") {
-		return
-	} else {
+	// if( fileName == "") {
+	// 	return;
+	// } else {
 	/* 
 	Reference:
 	http://stackoverflow.com/questions/12718210/how-to-save-file-from-textarea-in-javascript-with-a-name 
@@ -99,7 +99,7 @@ function saveFile() {
 	    );
 	};
 
-	Download.save($("editor").value, fileName);
+	Download.save($("editor").value, "temp.markdown");
 
-	}
+//	}
 }
