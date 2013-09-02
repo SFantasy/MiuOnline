@@ -2,17 +2,21 @@
 <html>
 	<head>
 		<title>Miu - Online markdown editor</title>
+		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/github.css" />
 	</head>
 	<body>
+		<div class="info">
+			<p id="infoText"></p>
+		</div>
 		<header>
 			<h1><span>M</span><span>i</span><span>u</span></h1>
 			<small>Online markdown editor</small>
 		</header>
 		<div id="toolbar">
 			<input id="fileInput" type="file" onchange="openFile(this.files)" />
-			<button onclick="showFileInput();">Open file</button>
+			<button onclick="showFileInput()">Open file</button>
+			<button onclick="save()">Save in browser</button>
 			<button onclick="saveFile()">Save as</button>
 			<button onclick="openEditor()">New Editor</button>
 			<button onclick="clearContent()">Clear content</button>
@@ -29,5 +33,4 @@
 	</body>
 	<script src="js/miu.js"></script>
 	<script src="js/markdown.js"></script>
-	<script src="js/highlight.pack.js"></script>
 </html>

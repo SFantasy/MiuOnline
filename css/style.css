@@ -139,3 +139,16 @@ footer a {
 footer a:hover {
 	color: #cc9900;
 }
+
+.info {
+	display: none;
+	z-index: 9999;
+	position: absolute;
+	top: 100px;
+	left: 200px;
+	color: #fff;
+	background-color: #333;
+	opacity: .8;
+	padding: 5px 10px;
+	border-radius: 4px;
+}
