@@ -5,15 +5,24 @@
  */
 var $ = function (id) { return document.getElementById(id); };
 
+/* Load if there exists localstorage of the editor */
+window.onload = function() {
+
+	new Editor($("editor"), $("preview"));
+
+	if(localStorage['miu-data']) {
+		$('editor').value = localStorage['miu-data'];
+		$('editor').editor.update();
+	}
+};
+
 function Editor(input, preview)	{
     this.update = function () {
       preview.innerHTML = markdown.toHTML(input.value);
-    }
+    };
     input.editor = this;
     this.update();
 }
-
-new Editor($("editor"), $("preview"));
 
 
 /*
@@ -24,7 +33,7 @@ function openEditor() {
 }
 
 function closeEditor() {
-	if(confirm("Sure to close?") == true) {
+	if(confirm("Sure to close?") === true) {
 		window.opener = null;
 		window.open('', '_self');
 		window.close();
@@ -62,44 +71,54 @@ function clearContent() {
 }
 
 /*
+ *  Save file in the browser with localStorage
+ */
+function save() {
+	if(!localstorage) {
+		alert('Ooops...your browser seems tooooo old!');
+	}
+
+	localStorage['miu-data'] = $('editor').value;
+	$('infoText').innerText = 'Content saved!';
+	var info = document.getElementsByClassName('info')[0];
+	info.style.display = 'block';
+	setTimeout(function() {
+		info.style.display = 'none';
+	}, 2000);
+}
+
+/*
  *  Save file function
  */
 function saveFile() {
-	// var fileName = prompt("Input file name: ");
-
-	// if( fileName == "") {
-	// 	return;
-	// } else {
-	/* 
+	/*
 	Reference:
 	http://stackoverflow.com/questions/12718210/how-to-save-file-from-textarea-in-javascript-with-a-name 
 	*/
 	var Download = {
-	    click : function(node) {
-	        var ev = document.createEvent("MouseEvents");
-	        ev.initMouseEvent("click", true, false, self, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-	        return node.dispatchEvent(ev);
-	    },
-	    encode : function(data) {
-	            return 'data:application/octet-stream;base64,' + btoa( data );
-	    },
-	    link : function(data, name){
-	        var a = document.createElement('a');
-	        a.download = name || self.location.pathname.slice(self.location.pathname.lastIndexOf('/')+1);
-	        a.href = data || self.location.href;
-	        return a;
-	    }
+		click : function(node) {
+			var ev = document.createEvent("MouseEvents");
+			ev.initMouseEvent("click", true, false, self, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+			return node.dispatchEvent(ev);
+		},
+		encode : function(data) {
+			return 'data:application/octet-stream;base64,' + btoa( data );
+		},
+		link : function(data, name){
+			var a = document.createElement('a');
+			a.download = name || self.location.pathname.slice(self.location.pathname.lastIndexOf('/')+1);
+			a.href = data || self.location.href;
+			return a;
+		}
 	};
 	Download.save = function(data, name){
-	    this.click(
-	        this.link(
-	            this.encode( data ),
-	            name
-	        )
-	    );
+		this.click(
+			this.link(
+				this.encode( data ),
+				name
+			)
+		);
 	};
 
 	Download.save($("editor").value, "temp.markdown");
-
-//	}
 }
