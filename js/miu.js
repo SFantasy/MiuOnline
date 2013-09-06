@@ -74,17 +74,17 @@ function clearContent() {
  *  Save file in the browser with localStorage
  */
 function save() {
-	if(!localstorage) {
+	if(!localStorage) {
 		alert('Ooops...your browser seems tooooo old!');
+	} else {
+		localStorage['miu-data'] = $('editor').value;
+		$('infoText').innerText = 'Content saved!';
+		var info = document.getElementsByClassName('info')[0];
+		info.style.display = 'block';
+		setTimeout(function() {
+			info.style.display = 'none';
+		}, 2000);
 	}
-
-	localStorage['miu-data'] = $('editor').value;
-	$('infoText').innerText = 'Content saved!';
-	var info = document.getElementsByClassName('info')[0];
-	info.style.display = 'block';
-	setTimeout(function() {
-		info.style.display = 'none';
-	}, 2000);
 }
 
 /*
